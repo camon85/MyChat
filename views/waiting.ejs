@@ -26,15 +26,16 @@
 
     $('form').submit(function(){
         var message =  $('#m').val();
+
+        if (message.length == 0) {
+            $('#m').focus();
+            return false;
+        }
+
         socket.emit('chat message', { message: message });
         $('#m').val('');
         $('#m').focus();
         return false;
-    });
-
-    socket.on('news', function (data) {
-        console.log('news:' + data);
-        $('#messages').append($('<li>').text(data.message));
     });
 
     socket.on('chat message', function(data){

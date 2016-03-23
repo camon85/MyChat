@@ -2,11 +2,15 @@ function listen(server) {
     var io = require('socket.io')(server);
 
     io.on('connection', function (socket) {
-        socket.emit('news', { hello: 'world' });
+        var roomName = 'room1';
+
+        socket.join(roomName);
+
+        io.to(roomName).emit('join:' + socket.id);
 
         socket.on('chat message', function (data) {
             console.log(data);
-            socket.emit('chat message', data);
+            io.to(roomName).emit('chat message', data);
         });
     });
 }
