@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+/* GET waiting listing. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'My Chat' });
+  res.render('waiting', { title: 'My Chat' });
 });
+
+
 
 module.exports = router;
