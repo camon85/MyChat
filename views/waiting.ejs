@@ -38,11 +38,19 @@
         return false;
     });
 
-    socket.on('chat message', function(data){
-        console.log('chat message:' + data);
-        $('#messages').append($('<li>').text(data.message));
+    socket.on('join', function(data){
+        console.log('join:' + data);
+        $('#messages').append($('<li>').text(data.serverMsg));
     });
 
+    socket.on('chat message', function(data){
+        console.log('chat message:' + data);
+        $('#messages').append($('<li>').text(data.nick + ': ' + data.message));
+    });
+
+    socket.on('disconnect', function(data){
+        $('#messages').append($('<li>').text(data.serverMsg));
+    });
 </script>
 </body>
 </html>
