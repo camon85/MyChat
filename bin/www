@@ -5,6 +5,7 @@
  */
 
 var app = require('../app');
+var chat = require('../chat');
 var debug = require('debug')('MyChat:server');
 var http = require('http');
 
@@ -22,16 +23,10 @@ app.set('port', port);
 var server = http.createServer(app);
 
 /**
- * Socket io
+ * chat module
  */
-var io = require('socket.io')(server);
-io.on('connection', function (socket) {
-  socket.emit('news', { hello: 'world' });
+chat.listen(server);
 
-  socket.on('my other event', function (data) {
-    console.log(data);
-  });
-});
 
 /**
  * Listen on provided port, on all network interfaces.
