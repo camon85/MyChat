@@ -28,4 +28,8 @@ $(function() {
     socket.on('disconnect', function(data){
         $('#messages').append($('<li>').text(data.serverMsg));
     });
+
+    socket.on('userCount', function(data){
+        $('#userCount').text(data.userCount);
+    });
 });
