@@ -20,6 +20,15 @@ $(function() {
         $('#messages').append($('<li>').text(data.serverMsg));
     });
 
+    socket.on('users', function(data){
+        console.log('users:' + JSON.stringify(data));
+        var html = '';
+        for (var i = 0; i < data.length; i++) {
+            html += '<li>' + data[i].nick + '</li>';
+        }
+        $('#users').html(html);
+    });
+
     socket.on('chat message', function(data){
         console.log('chat message:' + data);
         $('#messages').append($('<li>').text(data.nick + ': ' + data.message));
