@@ -41,9 +41,9 @@ $(function() {
 
     socket.on('changeNickResult', function(data){
         if (data.resultMessage == 'Success') {
-
+            alert('변경되었습니다.');
         } else {
-
+            alert('이미 존재하는 닉네임입니다.');
         }
     });
 
