@@ -16,12 +16,10 @@ $(function() {
     });
 
     socket.on('join', function(data){
-        console.log('join:' + data);
         $('#messages').append($('<li>').text(data.serverMsg));
     });
 
     socket.on('users', function(data){
-        console.log('users:' + JSON.stringify(data));
         var html = '';
         for (var i = 0; i < data.length; i++) {
             html += '<li>' + data[i].nick + '</li>';
@@ -30,7 +28,6 @@ $(function() {
     });
 
     socket.on('chat message', function(data){
-        console.log('chat message:' + data);
         $('#messages').append($('<li>').text(data.nick + ': ' + data.message));
     });
 
@@ -40,5 +37,20 @@ $(function() {
 
     socket.on('userCount', function(data){
         $('#userCount').text(data.userCount);
+    });
+
+    socket.on('changeNickResult', function(data){
+        if (data.resultMessage == 'Success') {
+
+        } else {
+
+        }
+    });
+
+    $('#btnChangeNick').click(function () {
+        var nick = prompt('닉네임 입력');
+        if (nick) {
+            socket.emit('changeNick', { nick: nick });
+        }
     });
 });

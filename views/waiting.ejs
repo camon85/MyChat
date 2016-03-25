@@ -2,32 +2,22 @@
 <html>
 <head>
     <title><%= title %></title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font: 13px Helvetica, Arial; }
-        form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-        form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-        form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-        .userInfo { background: #55CEA7}
-        .chatInfo { }
-        .messageArea { width: 70%; float: left; }
-        .userInfoArea { border-style: groove; list-style-type: none; background:yellow;  width: 30%; float: left; }
-        #messages { list-style-type: none; margin: 0; padding: 0; }
-        #messages li { padding: 5px 10px; }
-        #messages li:nth-child(odd) { background: #eee; }
-    </style>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
 <div class="container">
-    <h1 class="userInfo">현재 <span id="userCount"></span>명</h1>
+
     <div class="chatInfo">
         <div class="messageArea">
             <ul id="messages"></ul>
         </div>
         <div class="userInfoArea">
+            <div class="userInfo">현재 <span id="userCount"></span>명</div>
             <ul id="users"></ul>
+            <button class="wideButton" id="btnChangeNick">닉네임 변경</button>
         </div>
     </div>
+
     <form action="">
         <input id="m" autocomplete="off" /><button>Send</button>
     </form>
