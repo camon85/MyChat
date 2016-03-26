@@ -4,8 +4,8 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var chat = require('../chat');
+var app = require('../lib/app');
+var chat = require('../lib/chat');
 var debug = require('debug')('MyChat:server');
 var http = require('http');
 
