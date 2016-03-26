@@ -1,0 +1,25 @@
+{
+  "name": "MyChat",
+  "version": "0.0.1",
+  "homepage": "https://github.com/camon85/MyChat",
+  "authors": [
+    "camon <camon85@gmail.com>"
+  ],
+  "description": "node chat",
+  "main": "app.js",
+  "keywords": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "materialize": "~0.97.5",
+    "jquery": "~2.2.2"
+  }
+}
