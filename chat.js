@@ -44,7 +44,7 @@ function listen(server) {
                 data.resultMessage = 'Alreay exist';
             }
 
-            io.to(roomName).emit('changeNickResult', data);
+            socket.emit('changeNickResult', data);
         });
 
         // 접속 종료 이벤트
