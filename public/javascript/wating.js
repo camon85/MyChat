@@ -1,4 +1,5 @@
 $(function() {
+    // TODO 하드코딩 제거
     var socket = io.connect('http://localhost:3000');
 
     $('form').submit(function(){
@@ -16,23 +17,19 @@ $(function() {
     });
 
     socket.on('join', function(data){
-        $('#messages').append($('<li>').text(data.response.MESSAGE));
+        renderTemplate('template_system_message', 'messages', data);
     });
 
     socket.on('users', function(data){
-        var html = '';
-        for (var i = 0; i < data.length; i++) {
-            html += '<li>' + data[i].nick + '</li>';
-        }
-        $('#users').html(html);
+        renderTemplate('template_users', 'users', data, true);
     });
 
     socket.on('chat message', function(data){
-        $('#messages').append($('<li>').text(data.nick + ': ' + data.message));
+        renderTemplate('template_message', 'messages', data);
     });
 
     socket.on('disconnect', function(data){
-        $('#messages').append($('<li>').text(data.response.MESSAGE));
+        renderTemplate('template_system_message', 'messages', data);
     });
 
     socket.on('userCount', function(data){
@@ -53,4 +50,23 @@ $(function() {
             socket.emit('changeNick', { nick: nick });
         }
     });
+
+    /**
+     * render mustache template
+     * @param templateId
+     * @param targetId
+     * @param data
+     * @param isTruncateMode
+     */
+    function renderTemplate(templateId, targetId, data, isTruncateMode) {
+        var template = $('#' + templateId).html();
+        Mustache.parse(template);
+        var rendered = Mustache.render(template, data);
+
+        if (isTruncateMode) {
+            $('#' + targetId).html(rendered);
+        } else {
+            $('#' + targetId).append(rendered);
+        }
+    }
 });
