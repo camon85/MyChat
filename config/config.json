@@ -1,0 +1,11 @@
+{
+  "local" : {
+    "level" : "debug"
+  },
+  "development" : {
+    "level" : "debug"
+  },
+  "production" : {
+    "level" : "error"
+  }
+}

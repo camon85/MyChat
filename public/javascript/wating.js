@@ -16,7 +16,7 @@ $(function() {
     });
 
     socket.on('join', function(data){
-        $('#messages').append($('<li>').text(data.serverMsg));
+        $('#messages').append($('<li>').text(data.response.MESSAGE));
     });
 
     socket.on('users', function(data){
@@ -32,7 +32,7 @@ $(function() {
     });
 
     socket.on('disconnect', function(data){
-        $('#messages').append($('<li>').text(data.serverMsg));
+        $('#messages').append($('<li>').text(data.response.MESSAGE));
     });
 
     socket.on('userCount', function(data){
@@ -40,7 +40,7 @@ $(function() {
     });
 
     socket.on('changeNickResult', function(data){
-        if (data.resultMessage == 'Success') {
+        if (data.response.CODE == 1000) {
             Materialize.toast('변경되었습니다.', 4000);
         } else {
             Materialize.toast('이미 존재하는 닉네임입니다.', 4000);

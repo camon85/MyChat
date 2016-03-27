@@ -1,0 +1,18 @@
+{
+  "SUCCESS": {
+    "CODE": 1000,
+    "MESSAGE": "성공"
+  },
+  "JOIN": {
+    "CODE": 1100,
+    "MESSAGE": ">>> {{1}} <<< 입장"
+  },
+  "LEAVE": {
+    "CODE": 1200,
+    "MESSAGE": "--- {{1}} --- 퇴장"
+  },
+  "DUPLICATED_NICK": {
+    "CODE": 2000,
+    "MESSAGE": "닉네임이 중복되었습니다."
+  }
+}
