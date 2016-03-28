@@ -6,6 +6,4 @@ router.get('/', function(req, res, next) {
   res.render('waiting', { title: 'My Chat' });
 });
 
-
-
 module.exports = router;
