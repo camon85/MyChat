@@ -1,12 +1,5 @@
 # 실행
-npm install
-
-bower install
-
-npm start
-
-(TODO : grunt)
-
+grunt & npm start
 
 # template engine
 server side : ejs

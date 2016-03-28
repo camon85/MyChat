@@ -7,11 +7,11 @@
   ],
   "description": "node chat",
   "main": "app.js",
-  "keywords": [
+    "keywords": [
     "node"
-  ],
-  "license": "MIT",
-  "ignore": [
+    ],
+    "license": "MIT",
+    "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",

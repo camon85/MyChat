@@ -1,7 +1,5 @@
 
-# Created by https://www.gitignore.io/api/bo,bower,node,intellij
-
-#!! ERROR: bo is undefined. Use list command to see defined gitignore types !!#
+# Created by https://www.gitignore.io/api/bower,node,intellij,grunt
 
 ### Bower ###
 bower_components
@@ -96,3 +94,11 @@ fabric.properties
 
 ### Intellij Patch ###
 *.iml
+
+
+### grunt ###
+# Grunt usually compiles files inside this directory
+dist/
+
+# Grunt usually preprocesses files such as coffeescript, compass... inside the .tmp directory
+.tmp/

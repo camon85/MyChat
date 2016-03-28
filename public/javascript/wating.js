@@ -5,7 +5,7 @@ $(function() {
     $('form').submit(function(){
         var message =  $('#m').val();
 
-        if (message.length == 0) {
+        if (message.length === 0) {
             $('#m').focus();
             return false;
         }
