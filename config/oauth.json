@@ -1,0 +1,12 @@
+{
+  "facebook": {
+    "clientID": "",
+    "clientSecret": "",
+    "callbackURL": ""
+  },
+  "google": {
+    "consumerKey": "",
+    "consumerSecret": "",
+    "callbackURL": ""
+  }
+}
