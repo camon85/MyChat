@@ -5,17 +5,15 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="/">HOME</a></li>
                 <li><a href="/waiting">CHAT</a></li>
-                <li><a class="waves-effect waves-light btn" href="/join">Join</a></li>
-                <li><a class="waves-effect waves-light light-green btn" href="/login">Login</a></li>
-                <li><a class="waves-effect waves-light red lighten-1 btn" href="/logout">Log Out</a></li>
+                <%if (!user) { %><li><a class="waves-effect waves-light light-green btn" href="/login">Login</a></li><% } %>
+                <%if (user) { %><li><a class="waves-effect waves-light red lighten-1 btn" href="/logout">Log Out</a></li><% } %>
             </ul>
 
             <ul id="nav-mobile" class="side-nav">
                 <li><a href="/">HOME</a></li>
                 <li><a href="/waiting">CHAT</a></li>
-                <li><a class="waves-effect waves-light btn" href="/join">Join</a></li>
-                <li><a class="waves-effect waves-light light-green btn" href="/login">Login</a></li>
-                <li><a class="waves-effect waves-light red lighten-1 btn" href="/logout">Log Out</a></li>
+                <%if (!user) { %><li><a class="waves-effect waves-light light-green btn" href="/login">Login</a></li><% } %>
+                <%if (user) { %><li><a class="waves-effect waves-light red lighten-1 btn" href="/logout">Log Out</a></li><% } %>
             </ul>
             <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
         </div>
