@@ -1,5 +1,6 @@
 # 실행
-grunt & npm start
+run mongodb 
+grunt & set NODE_ENV=production & npm start
 
 # template engine
 server side : ejs
@@ -9,8 +10,6 @@ client side : mustache
 
 # 작업 예정
 db연동
-
-login
 
 귓속말
 

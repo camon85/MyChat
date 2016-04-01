@@ -1,11 +1,14 @@
 {
   "local" : {
-    "level" : "debug"
+    "level" : "debug",
+    "mongodbUri" : "mongodb://localhost/user"
   },
   "development" : {
-    "level" : "debug"
+    "level" : "debug",
+    "mongodbUri" : "mongodb://localhost/user"
   },
   "production" : {
-    "level" : "error"
+    "level" : "error",
+    "mongodbUri" : "mongodb://localhost/user"
   }
 }
